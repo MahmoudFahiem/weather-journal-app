@@ -1,0 +1,38 @@
+/* xs Screen */
+@media screen and (max-width: 575px) {
+
+}
+
+/* sm screen */
+@media screen and (min-width: 576px) {
+  
+}
+
+/* md screen */
+@media screen and (min-width: 768px) {
+  header {
+    padding: 100px 0;
+  }
+
+  header .img-container {
+    display: block;
+    position: absolute;
+    bottom: -55%;
+    width: auto;
+  }
+}
+
+/* lg screen */
+@media screen and (min-width: 992px) {
+  
+}
+
+/* xl screen */
+@media screen and (min-width: 1200px) {
+  
+}
+
+/* xxl screen */
+@media screen and (min-width: 1400px) {
+  
+}
