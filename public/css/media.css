@@ -10,6 +10,10 @@
 
 /* md screen */
 @media screen and (min-width: 768px) {
+  /*
+  ** Header **
+  */
+
   header {
     padding: 100px 0;
   }
@@ -19,6 +23,14 @@
     position: absolute;
     bottom: -55%;
     width: auto;
+  }
+
+  /*
+  ** App Body **
+  */
+
+  section.app-body {
+    padding: 100px 0;
   }
 }
 
