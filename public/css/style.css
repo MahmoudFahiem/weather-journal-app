@@ -61,6 +61,18 @@ section.app-body .form-control::placeholder {
 }
 
 /*
+** Most Recent Entry **
+*/
+
+section.most-recent-entry {
+    background: var(--primary-light);
+    background: linear-gradient(269.25deg, var(--primary-light) 0%, var(--primary-dark) 99.35%);
+    border-radius: 20px;
+    color: #fff;
+}
+
+
+/*
 ** Components **
 */
 
