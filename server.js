@@ -27,3 +27,23 @@ const listening = () => {
   console.log(`Running on port ${port}`)
 }
 app.listen(port, listening);
+
+// POST Request to Set Weather Journaling Data
+
+app.post('/addWeatherData', (req, res) => {
+  const weatherJournalData = req.body;
+  projectData.location = weatherJournalData.location;
+  projectData.temp = weatherJournalData.temp;
+  projectData.feelings = weatherJournalData.feelings;
+  projectData.date = weatherJournalData.date;
+  projectData.iconURL = weatherJournalData.iconURL;
+  console.log(projectData);
+  res.send('Data Posted Successfully');
+})
+
+
+// // GET Request
+
+app.get('/getRecentUserEntry', (req, res) => {
+  res.send(projectData);
+})
