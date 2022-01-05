@@ -21,12 +21,12 @@ app.use(express.static('public'));
 
 
 // Setup Server
-const port = 8000;
+const PORT = process.env.PORT || 8000;
 const listening = () => {
   console.log('Server is running....');
-  console.log(`Running on port ${port}`)
+  console.log(`Running on port ${PORT}`)
 }
-app.listen(port, listening);
+app.listen(PORT, listening);
 
 // POST Request to Set Weather Journaling Data
 

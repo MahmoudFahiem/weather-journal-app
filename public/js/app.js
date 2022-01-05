@@ -1,6 +1,6 @@
 class WeatherAPI {
   static API_KEY = '4b806ae0b31d1554da7dd7d975789281';
-  static baseURL = 'http://api.openweathermap.org/data/2.5/weather?units=metric&zip=';
+  static baseURL = 'https://api.openweathermap.org/data/2.5/weather?units=metric&zip=';
 
   static getWeatherInfo = async (baseURL, zipCode, API_KEY) => {
     const response = await fetch(`${baseURL}${zipCode}&appid=${API_KEY}`);
@@ -68,28 +68,23 @@ let newDate = d.toLocaleString('en-US', { month: 'long', day: 'numeric', year: '
 ** Events **
 */
 
-UI.userForm.addEventListener('submit', (e) => {
+UI.userForm.addEventListener('submit', async e => {
   e.preventDefault();
   const zipCode = UI.zipInput.value;
   const userFeelings = UI.feelingsInput.value;
-  if ((zipCode || userFeelings) == '') return;
-  WeatherAPI.getWeatherInfo(WeatherAPI.baseURL, zipCode, WeatherAPI.API_KEY)
-  .then(weatherData => {
-      if (weatherData.cod === "404") throw new Error('The city is not found');
-      postWeatherData('/addWeatherData', {
-        temp: weatherData.main.temp,
-        location: `${weatherData.name}, ${weatherData.sys.country}`,
-        iconURL: `http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`,
-        date: newDate,
-        feelings: userFeelings
+  if (zipCode  == '') return alert('Please Enter zip Code');
+  const weatherData = await WeatherAPI.getWeatherInfo(WeatherAPI.baseURL, zipCode, WeatherAPI.API_KEY);
+  if (weatherData.cod === "404") return alert('The city is not found');
+  try {
+    const result = await postWeatherData('/addWeatherData', {
+      temp: weatherData.main.temp,
+      location: `${weatherData.name}, ${weatherData.sys.country}`,
+      iconURL: `https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`,
+      date: newDate,
+      feelings: userFeelings
     })
-    .then(() => {
-        UI.render();
-    })
-    .catch( err => {
-      console.log('Error: ', err)
-    });
-  })
-
-
+    UI.render();
+  } catch(err) {
+    console.log('Error: ', err)
+  }
 })

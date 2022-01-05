@@ -1,10 +1,13 @@
 # Weather-Journal App Project
 
 ## Overview
-This project requires you to create an asynchronous web app that uses Web API and user data to dynamically update the UI. 
+A weather journal app to apply what has been learned in asynchronous JavaScript and basic back end development using node js and express framework for routing
 
 ## Instructions
-This will require modifying the `server.js` file and the `website/app.js` file. You can see `index.html` for element references, and once you are finished with the project steps, you can use `style.css` to style your application to customized perfection.
+- You run the app using `npm start` which will run the server on port specified by the env (default is 8000)
+- The user must enter his city's zip code and may enter how he feels about the day then press the generate button.
+- The app will get the weather data accurate from (openweathermap.org)[openweathermap.org] and print it nicely on the weather panel.
 
-## Extras
-If you are interested in testing your code as you go, you can use `tests.js` as a template for writing and running some basic tests for your code.
+## Dependencies
+- Express framework
+- Node js 

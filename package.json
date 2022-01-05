@@ -4,9 +4,7 @@
   "description": "A weather journal app to show weather data",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "build": "webpack"
+    "start": "node server.js"
   },
   "keywords": [
     "async",
