@@ -1,7 +1,7 @@
 # Weather-Journal App Project
 
 ## Overview
-A weather journal app to apply what has been learned in asynchronous JavaScript and basic back end development using node js and express framework for routing
+A weather journal app to apply what has been learned in asynchronous JavaScript and basic back end development using node js and express framework for routing https://myweather-journal.herokuapp.com
 
 ## Instructions
 - You run the app using `npm start` which will run the server on port specified by the env (default is 8000)
